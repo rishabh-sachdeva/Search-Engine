@@ -215,7 +215,6 @@ public class BM25 {
 	}
 
 	private static double calculateIDF(int docFreq) {
-		BM25 obj = new BM25();
 		return Math.log(num_docs/(docFreq+1));
 	}
 
