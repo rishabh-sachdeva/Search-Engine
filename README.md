@@ -1,5 +1,5 @@
 # Search-Engine
-##Phase 1: 
+## Phase 1: 
 The objective of this assignment is to compare two approaches to tokenize and downcase all words in a collection of HTML documents. You may choose any of the following approaches: flex, javacc, other publicly available tokenizer, or custom code in C, C++, Perl, Python, PHP, or Java. Each program should read a directory name for the input documents from the command line and a directory name for the output documents from the command line. The program should produce three things:
 a directory of all tokenized documents (one output file per input file) 
 a file of all tokens and their frequencies sorted by token 
@@ -7,7 +7,7 @@ a file of all tokens and their frequencies sorted by frequency
 You may use the UNIX sort facility to sort the output files. However, there must be a single command line call to your function, e.g., 
 tokenize input-dir output-dir
 
-##Phase 2:
+## Phase 2:
 The objective of this assignment is to calculate the term weights for the tokens that occur in each document in your collection. To execute your program, it should be sufficient to type:
 
 calcwts input-directory output-directory
@@ -19,7 +19,7 @@ Output Files The goal is to build one output file per input file. In the output 
 Algorithm: You may implement either a memory-based or file-based algorithm, i.e., you may create a hash table in memory for each document to store the information about term frequencies, or a temporary file on disk to store the term frequencies (deprecated). You will store the global information (numdocuments per term) in memory. You should time your term weight calculation program on a varying number of documents (10, 20, 40, 80, 100, 200, 300, 400, 500) and plot a graph of the indexing time as a function of the number of documents in your report. The timings should be done on the FULL process (starting with the raw documents).
 
 
-##Phase 3:
+## Phase 3:
 The objective of this assignment is to build an index for the documents in your collection. In this sense, an index is also called an inverted file: instead of looking up a file to see what terms occur in it, we're looking up a term to see what files that term occurs in.
 
 To execute your program, it should be sufficient to type:
@@ -34,7 +34,7 @@ the word
 the number of documents that contain that word (this corresponds to the number of records that word gets in the postings file)
 the location of the first record for that word in the postings file
 
-##Phase 4
+## Phase 4
 The objectives of this assignment are to build a command line retrieval engine on top of the inverted files created in Assignment 3. The retrieval engine should take in queries which are lists of words, run them through the same preprocessing as the collection (i.e., downcase, optionally remove stopwords) and then match the query words against the inverted file to come up with document weights (the sum of the term weights in the document). Display the ten top-ranking document identifiers or filenames to the user.
 
 You may use any algorithm you choose to locate the postings, but your report should discuss your choices (i.e., do binary search on index file on disk versus load entire inverted index with poistings into memory and search there). If you manage your inverted index between memory and disk, there will be a 3% bonus.
@@ -43,7 +43,7 @@ Entries in the inverted index shall be non-negative.
 The query must run in a single command from the linux command line, i.e., not be an interactive menu-based system. 
 For example "retrieve dog cat bird" would be an example query.
 
-##Phase 5:
+## Phase 5:
 In this assignment we perform some analysis of the 504-document HTML test corpus, and introduce some concepts related to document clustering.
 
 A similarity matrix is defined as a matrix in which entry i,j is the similarity of documents i and j, computed using the cosine score or some other metric. A document is perfectly similar to itself, so the entries on the main diagonal are all 1. Similarity is also symmetric, i.e. sim(i,j) = sim(j,i), so the similarity matrix is upper triangular in form. In this assignment, you'll need to construct a similarity matrix. You should code this section of the homework on your own.
